@@ -1,0 +1,12 @@
+# Ignore .git files in lower directories
+**/.git*
+
+# Include .git files in the current directory
+!./.git*
+
+# Exclude directories starting with t19 or t16 from being ignored
+!t19*/.git*
+!t16*/.git*
+
+# Ignore any .vscode folders
+**/.vscode/
