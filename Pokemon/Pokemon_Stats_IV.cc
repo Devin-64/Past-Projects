@@ -108,7 +108,7 @@ class IV {
 			// Step Two:	Return the Binary AND with LOW5_MASK for only the last 5 bits
 			//				3 bit 0 padding such that the value is within the range 0-31
 			return (stats >> BIT_SHIFT(p_index) & LOW5_MASK);
-			return (stats & BIT_MASK(p_index)) >> BIT_SHIFT(p_index); // shift and just and with low5;
+			// return (stats & BIT_MASK(p_index)) >> BIT_SHIFT(p_index); // shift and just and with low5;
 		}
 		return (stats & REM_MASK);
 	}
