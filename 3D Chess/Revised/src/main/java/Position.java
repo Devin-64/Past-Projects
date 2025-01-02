@@ -1,7 +1,5 @@
-public class Position extends Coordinates { //FIXME
-
+public class Position { //FIXME
     public byte [] coordinates = new byte[3];
-    public Position position;
 
     public Position (byte xCoordinate, byte yCoordinate, byte zCoordinate) { this(new byte[] {xCoordinate, yCoordinate, zCoordinate}); }
 

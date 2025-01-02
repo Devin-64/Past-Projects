@@ -1,12 +1,11 @@
 import ;
 
-public enum PieceTYPE { //DONE
-    PAWN, KNIGHT, ROOK, BISHOP, QUEEN, KING, PIECE;
-}
+public enum PieceTYPE { //Default pieces
+    PAWN, KNIGHT, ROOK, BISHOP, QUEEN, KING, PIECE; }
 
-public abstract class Piece extends Position {
-    Position position = new Position(new byte[]{-1,-1,-1});
-    public Piece(Position position) { super(position); }
+public abstract class Piece {
+    Position position;
+    public Piece(Position position){ this.position = position; }
 
     public Position getPosition(){ return position; }
     public byte[] getPosition (byte num) { return getCoordinates(); }
