@@ -10,3 +10,6 @@
 
 # Ignore any .vscode folders
 **/.vscode/
+
+#Ignore any .gradle folders
+**/.gradle/
