@@ -1,11 +1,14 @@
-public class Position { //FIXME
+//import ThreeDimensionalExceptions.CoordinateException;
+
+
+public class Position extends ThreeDimensionalExceptions { //FIXME
     public byte [] coordinates = new byte[3];
 
-    public Position (byte xCoordinate, byte yCoordinate, byte zCoordinate) { this(new byte[] {xCoordinate, yCoordinate, zCoordinate}); }
+    public Position (byte xCoordinate, byte yCoordinate, byte zCoordinate) { this(new byte [] {xCoordinate, yCoordinate, zCoordinate}); }
 
-    public Position (byte[] coordinates) { super(coordinates); } //FIXME
+    public Position (byte[] coordinates) { this.coordinates = coordinates; } //FIXME
 
-    public Position (Position position) { super(position); } //FIXME ADD bytePosition*/
+    public Position (Position position) { ; } //FIXME ADD bytePosition*/
 
     public byte[] getCoordinates () { return coordinates; }
     public byte getXCoordinate () { return coordinates[0]; }
@@ -14,24 +17,28 @@ public class Position { //FIXME
 
     public void setPosition (byte xCoordinate, byte yCoordinate, byte zCoordinate) {
         byte [] coordinates = new byte[]{xCoordinate, yCoordinate, zCoordinate};
-        if (isPosition(coordinates)) { setCoordinates(coordinates); } //TODO
-        else //TODO
+        if (isPosition(coordinates)) { setPosition(coordinates); } //TODO
+        // else //TODO
     }
 
-    public void setCoordinates (byte[] coordinates) { if(isPosition(coordinates)){ this.coordinates = coordinates; } } //TODO
+    public void setPosition (byte[] coordinates) { if(isPosition(coordinates)){ this.coordinates = coordinates; } } //TODO
 
-    public void setPosition (Position position) { this.position = position; }
+//    public void setPosition (Position position) { this.position = position; }
 
     public boolean isPosition (byte[] position) { //TODO
         if (position.length != 3) {
-            new CoordinateException("Wrong Coordinate Format: Need Length 3", new Throwable("Length !3"));
+            try {
+                throw new ThreeDimensionalExceptions.CoordinateException("Wrong Coordinate Format: Need Length 3", new Throwable("Length !3"));
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
             return false;
         }
-        else if (isCoordinate(position[0]) + isCoordinate(position[1]) + isCoordinate(position[2]) != 0) { //TODO Add check if 2D mode
-            if () { } //TODO
-            if () { } //TODO
-            if () { } //TODO
-        }
+        //else if (isCoordinate(position[0]) + isCoordinate(position[1]) + isCoordinate(position[2]) != 0) { //TODO Add check if 2D mode
+            // if () { } //TODO
+            // if () { } //TODO
+            // if () { } //TODO
+        //}
         return true;
     }
 

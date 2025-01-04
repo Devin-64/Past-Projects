@@ -1,7 +1,7 @@
+
+//import Revised.src.main.java.*;
+
 public class Move extends Piece {
-
-
-
     public Move(Position position) {
         super(position);
     }
@@ -49,7 +49,7 @@ public class Move extends Piece {
                 if (temp[2] < 0) {
                     isLegal--;
                 } //Tracks how many errors
-                arrayCombine(rtn, temp);
+    //            arrayCombine(rtn, temp);
                 break;
             }
             case KNIGHT: {

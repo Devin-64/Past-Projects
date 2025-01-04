@@ -1,7 +1,15 @@
 rootProject.name = "PastProjects"
 
 include("3D Chess:Revised") // Java project
-include("Pokemon")          // C++ project
+rootProject.name = "PastProjects"
+
+// Include only the 3D Chess Revised project
+include("3D Chess:Revised")
+
+// Optionally log ignored projects for clarity
+println "Ignoring project: Pokemon"
+
+//include("Pokemon")          // C++ project
 
 // Skip ignored folders explicitly
 // E.g., skipping "3D Chess/Original"

@@ -1,6 +1,6 @@
 public class ThreeDimensionalExceptions {
 
-    public class RulesException extends Exception {
+    public static class RulesException extends Exception {
         public RulesException () { super(); }
         public RulesException (String message) { super(message); }
         public RulesException (String message, Throwable cause) { super(message, cause); }
@@ -10,7 +10,7 @@ public class ThreeDimensionalExceptions {
         }
     } //TODO DEFAULT MESSAGE
 
-    public class BoardException extends Exception {
+    public static class BoardException extends Exception {
         public BoardException () { super(); }
         public BoardException (String message) { super(message); }
         public BoardException (String message, Throwable cause) { super(message, cause); }
@@ -20,7 +20,7 @@ public class ThreeDimensionalExceptions {
         }
     }
 
-    public class CoordinateException extends BoardException { //DONE
+    public static class CoordinateException extends BoardException { //DONE
         public CoordinateException () { this(""); }
         public CoordinateException (String message) { super("Coordinate Exception: " + message); }
         public CoordinateException (String message, Throwable cause) { super("Coordinate Exception: " + message, cause); }
@@ -30,7 +30,7 @@ public class ThreeDimensionalExceptions {
         }
     } //DONE
 
-    public class CoordinateOutOfBoundsException extends CoordinateException { //DONE
+    public static class CoordinateOutOfBoundsException extends CoordinateException { //DONE
         public CoordinateOutOfBoundsException () { this(""); }
         public CoordinateOutOfBoundsException (String message) { super("Position Out of Bounds: " + message); }
         public CoordinateOutOfBoundsException (String message, Throwable cause) { super("Position Out of Bounds: " + message, cause); }
@@ -40,7 +40,7 @@ public class ThreeDimensionalExceptions {
         }
     } //DONE
 
-    public class MovementRulesException extends RulesException {
+    public static class MovementRulesException extends RulesException {
         public MovementRulesException() { super(); }
         public MovementRulesException(String message) { super(message); }
         public MovementRulesException(String message, Throwable cause) { super(message, cause); }
@@ -50,7 +50,7 @@ public class ThreeDimensionalExceptions {
         }
     } //TODO DEFAULT MESSAGE
 
-    public class MovementOutOfBoundsException extends CoordinateOutOfBoundsException { //DONE
+    public static class MovementOutOfBoundsException extends CoordinateOutOfBoundsException { //DONE
         public MovementOutOfBoundsException () { this(""); }
         public MovementOutOfBoundsException (String message) { super("Move Out of Bounds: " + message); }
         public MovementOutOfBoundsException (String message, Throwable cause) { super("Move Out of Bounds: " + message, new Throwable(cause)); }
@@ -60,14 +60,14 @@ public class ThreeDimensionalExceptions {
         }
     } //DONE
 
-    public class MovementExceedsMaximum extends MovementOutOfBoundsException { //DONE
+    public static class MovementExceedsMaximum extends MovementOutOfBoundsException { //DONE
         public MovementExceedsMaximum () { this(""); }
         public MovementExceedsMaximum (String message) { super("Position Exceeds Maximum: " + message); }
         public MovementExceedsMaximum (String message, Throwable cause) { super("Position Exceeds Maximum: " + message, cause); }
         public MovementExceedsMaximum (Throwable cause) { this("Position Exceeds Maximum: ", cause); }
     } //DONE
 
-    public class MovementExceedsMinimum extends MovementOutOfBoundsException { //DONE
+    public static class MovementExceedsMinimum extends MovementOutOfBoundsException { //DONE
         public MovementExceedsMinimum () { this(""); }
         public MovementExceedsMinimum (String message) { super("Position Exceeds Minimum: " + message); }
         public MovementExceedsMinimum (String message, Throwable cause) { super("Position Exceeds Minimum: " + message, cause); }

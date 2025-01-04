@@ -1,25 +1,33 @@
-public class 3DCoordinate{
+public class Coordinate3D {
     private byte [] coordinate = new byte[3];
 
-    public 3DCoordinate () { 3DCoordinate(-1); }
-    public 3DCoordinate (byte coord) { 3DCoordinate(coord,-1); }
-    public 3DCoordinate (byte coord1, byte coord2) { 3DCoordinate(coord1, coord2, -1); }
-    public 3DCoordinate (byte coord1, byte coord2, byte coord3) {
-        3DCoordinate(new byte[] {coord1, coord2, coord3}); }
-    public 3DCoordinate (byte[] coordinate) { set3DCoordinate(coordinate); }
-    public byte get3DCoordinate () { return this.coordinate; }
-    public void set3DCoordinate (byte[] coordinate) { 
-        if (coordinate.length == this.coordinate.lenght) this.coordinate = coordinate;
-        else new CoordinateException("Array Input of Incorect length (Coordinate || set3DCoordinate)",
-                new Throwable("Resulted In Unchecked Error"));
+    public Coordinate3D () { this((byte) -1); }
+    public Coordinate3D (byte coord) { this(coord, (byte) -1); }
+    public Coordinate3D (byte coord1, byte coord2) { this(coord1, coord2, (byte) -1); }
+    public Coordinate3D (byte coord1, byte coord2, byte coord3) {
+        this(new byte[] {coord1, coord2, coord3}); }
+    public Coordinate3D (byte[] coordinate) { setCoordinate3D(coordinate); }
+//    public Coordinate3D (Coordinate3D Coordinate) { }
+    public byte[] getCoordinate3D () { return this.coordinate; }
+    public void setCoordinate3D (byte[] coordinate) { 
+        if (coordinate.length == this.coordinate.length) this.coordinate = coordinate;
+        else { 
+            try {
+                throw new ThreeDimensionalExceptions.CoordinateException(
+                    "Array Input of Incorrect Length (Coordinate || setCoordinate3D)", 
+                    new Throwable("Resulted in Unchecked Error"));
+            } catch (Exception e) {
+                //
+            }
+        }
     }
 
-    public byte coordinateCompare (3DCoordinate First, byte[] coordinate) {
-        return coordinateCompare(First, new 3DCoordinate(coordinate));  }
-    public byte coordinateCompare (3DCoordinate First, 3DCoordinate Second) {
-        return (Math.abs(First.get3DCoordinate()[0]) - Math.abs(Second.get3DCoordinate()[0])) +
-               (Math.abs(First.get3DCoordinate()[1]) - Math.abs(Second.get3DCoordinate()[1])) +
-               (Math.abs(First.get3DCoordinate()[2]) - Math.abs(Second.get3DCoordinate()[2]));
+    public byte coordinateCompare (Coordinate3D First, byte[] coordinate) {
+        return coordinateCompare(First, new Coordinate3D(coordinate));  }
+    public byte coordinateCompare (Coordinate3D First, Coordinate3D Second) {
+        return (byte) ((Math.abs(First.getCoordinate3D()[0]) - Math.abs(Second.getCoordinate3D()[0])) +
+               (Math.abs(First.getCoordinate3D()[1]) - Math.abs(Second.getCoordinate3D()[1])) +
+               (Math.abs(First.getCoordinate3D()[2]) - Math.abs(Second.getCoordinate3D()[2])));
     }
 // This section is being moved into other classes in the next revision as it is unessesary here
 //

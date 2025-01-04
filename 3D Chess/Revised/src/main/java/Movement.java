@@ -4,7 +4,7 @@ public class Movement extends MoveTemplate { //FIXME : TODO COMBINE WITH MoveTem
         super(position);
     }
 
-    public void Movement (PieceTYPE type, Piece piece, Position position) { //TODO
+/*    public void Movement (PieceTYPE type, Piece piece, Position position) { //TODO
         move(piece, position, type);
         /*switch (type) {
             case PAWN : { Pawn pawn = new Pawn(piece.getPosition()); new pawnMovement(pawn,position); break; } //TODO
@@ -14,9 +14,9 @@ public class Movement extends MoveTemplate { //FIXME : TODO COMBINE WITH MoveTem
             case QUEEN : { queenMovement(); break; } //TODO
             case KING : { kingMovement(); break; } //TODO
             case PIECE: { pieceMovement(); new MovementRulesException("Unknown Piece: " + type); break; } //TODO
-        }*/
+        } */
 
-    }
+//    }
 
     /*public class pawnMovement { //TODO
 
