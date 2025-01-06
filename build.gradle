@@ -1,0 +1,7 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+// Add common configurations here if needed

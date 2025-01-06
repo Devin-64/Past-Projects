@@ -1,0 +1,17 @@
+plugins {
+    id 'cpp-application'
+}
+
+application {
+    // Define sources and headers in the flat structure
+    source.from(fileTree(dir: ".", include: "**/*.cc", exclude: ["README.md", "**/*.rtf"]))
+    privateHeaders.from(fileTree(dir: ".", include: "**/*.h", exclude: ["README.md", "**/*.rtf"]))
+}
+
+binaries.executable {
+    compilerArgs.addAll(['-O3', '-Wall', '-Wextra'])
+}
+
+tasks.withType(CppCompile).configureEach {
+    compiler.executable = 'gcc' // Specify compiler if needed
+}
